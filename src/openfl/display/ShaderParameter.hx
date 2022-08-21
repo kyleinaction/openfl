@@ -206,14 +206,14 @@ import openfl.display3D.Context3D;
 						gl.uniform3i(index, boolValue[0] ? 1 : 0, boolValue[1] ? 1 : 0, boolValue[2] ? 1 : 0);
 					case BOOL4:
 						gl.uniform4i(index, boolValue[0] ? 1 : 0, boolValue[1] ? 1 : 0, boolValue[2] ? 1 : 0, boolValue[3] ? 1 : 0);
-					case FLOAT:
-						gl.uniform1f(index, floatValue[0]);
-					case FLOAT2:
-						gl.uniform2f(index, floatValue[0], floatValue[1]);
-					case FLOAT3:
-						gl.uniform3f(index, floatValue[0], floatValue[1], floatValue[2]);
-					case FLOAT4:
-						gl.uniform4f(index, floatValue[0], floatValue[1], floatValue[2], floatValue[3]);
+					case FLOAT: 
+						gl.uniform1fv (index, new lime.utils.Float32Array(floatValue) );
+					case FLOAT2: 
+						gl.uniform2fv (index, new lime.utils.Float32Array(floatValue));
+					case FLOAT3: 
+						gl.uniform3fv (index, new lime.utils.Float32Array(floatValue));
+					case FLOAT4: 
+						gl.uniform4fv (index, new lime.utils.Float32Array(floatValue));
 
 					case MATRIX2X2:
 						for (i in 0...4)
